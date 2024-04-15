@@ -1,0 +1,19 @@
+<div *ngIf="isFavoriteMarked">
+    <div *ngFor="let favoriteJob of favoriteJobList">
+        <div class="row">
+            <div class="col-md-2">
+                <img src="{{favoriteJob.companyLogo}}" alt="Brand image" />
+            </div>
+            <div class="col-md-8">
+                <a style="cursor: pointer;" (click)="jobDetail(favoriteJob)"><h3>{{favoriteJob.title}}</h3></a>
+                <div class="disc">
+                    <h5>Company : {{favoriteJob.companyName}}   Reference : {{favoriteJob.reference}}</h5>
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+</div>
+<div *ngIf="!isFavoriteMarked">
+    <div class="nojobMsg">{{nofavoriteJob}}</div>
+</div>
